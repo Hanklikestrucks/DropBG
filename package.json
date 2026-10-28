@@ -1,7 +1,13 @@
 {
   "name": "dropbg",
-  "private": true,
   "version": "0.0.0",
+  "description": "In-browser batch background remover with marketplace presets. Nothing gets uploaded.",
+  "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hanklikestrucks/dropbg"
+  },
+  "private": true,
   "type": "module",
   "scripts": {
     "fetch-assets": "node scripts/fetch-bg-assets.mjs",

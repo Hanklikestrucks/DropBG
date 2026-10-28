@@ -61,10 +61,8 @@ npm run deploy
 - `src/lib/geometry.ts` holds the crop and resize math. Previews and exports share the same `drawComposite` path, so what you see is what you download.
 - Photos are processed one at a time. Only the full-resolution cutout PNG and a 768px preview are kept in memory per photo.
 
-## Licensing — read before charging money
+## License
 
-`@imgly/background-removal` is licensed **AGPL-3.0**. This app ships that library to every visitor's browser, which counts as distributing it. In practice you must do one of the following:
+DropBG is released under the **GNU AGPL-3.0** (see `LICENSE`). This isn't optional: it bundles [`@imgly/background-removal`](https://github.com/imgly/background-removal-js), which is AGPL-3.0, and serving the app to browsers counts as distributing it. The footer links to this repository through `VITE_SOURCE_URL`, which is set in `.env.production`. That link is how the app meets the AGPL's "offer the source" requirement, so keep it pointed at the code you actually deploy.
 
-- **Release this app under the AGPL** and link to its source (`VITE_SOURCE_URL`). Charging $19 is allowed. The trade-off is that anyone could fork the app and remove the license gate. Since the gate is client-side anyway, the practical loss is small.
-- **Buy a commercial license from IMG.LY** (support@img.ly) and keep the code closed.
-- **Swap the model** to one under a permissive license. The engine is isolated in `src/lib/bg.worker.ts`, so this is a single-file change. Check the model's license too: popular RMBG-1.4 and RMBG-2.0 are non-commercial.
+Selling Pro for $19 is fully compatible with the AGPL. If you ever want to close the source, you'd need either a commercial license from IMG.LY (support@img.ly) or a model with a permissive license swapped into `src/lib/bg.worker.ts`. Check the model's own license as well: RMBG-1.4 and RMBG-2.0 are non-commercial.
