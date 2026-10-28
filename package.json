@@ -1,0 +1,35 @@
+{
+  "name": "dropbg",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "fetch-assets": "node scripts/fetch-bg-assets.mjs",
+    "dev": "npm run fetch-assets && vite",
+    "build": "npm run fetch-assets && tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "lint": "oxlint",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name dropbg"
+  },
+  "dependencies": {
+    "@imgly/background-removal": "1.7.0",
+    "jszip": "^3.10.2",
+    "onnxruntime-web": "1.21.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.89.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5",
+    "wrangler": "^4.154.0"
+  }
+}
